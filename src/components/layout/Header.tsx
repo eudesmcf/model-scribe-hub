@@ -3,6 +3,7 @@ import { Bell, Database, HelpCircle, Search, Settings, User } from "lucide-react
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -30,6 +31,7 @@ const Header = () => {
           </div>
           
           <div className="flex items-center gap-2">
+            <ThemeToggle />
             <Button
               variant="ghost"
               size="icon"
