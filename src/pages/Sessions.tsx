@@ -1,4 +1,3 @@
-
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -37,6 +36,8 @@ import {
   FileText 
 } from "lucide-react";
 import { format, subDays, subHours, subMinutes } from "date-fns";
+import { NewSessionDialog } from "@/components/sessions/NewSessionDialog";
+import { ExportReportsDialog } from "@/components/reports/ExportReportsDialog";
 
 interface Session {
   id: string;
@@ -49,7 +50,6 @@ interface Session {
   changes: number;
 }
 
-// Mock data
 const sessions: Session[] = [
   {
     id: "1",
@@ -168,10 +168,7 @@ const Sessions = () => {
       <div className="container py-6">
         <div className="flex items-center justify-between mb-6">
           <h1 className="text-2xl font-semibold">Sessions</h1>
-          <Button>
-            <Plus className="h-4 w-4 mr-2" />
-            New Session
-          </Button>
+          <NewSessionDialog />
         </div>
 
         <Card className="mb-6">
@@ -193,6 +190,7 @@ const Sessions = () => {
                   <Filter className="h-4 w-4 mr-2" />
                   Filter
                 </Button>
+                <ExportReportsDialog />
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant="outline">
